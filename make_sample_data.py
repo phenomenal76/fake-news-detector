@@ -1,0 +1,60 @@
+"""Creates a tiny TOY dataset (data/sample_news.csv) so the project runs out of the box.
+These headlines are written by hand for demo purposes only - use the real Kaggle dataset for real results."""
+import pandas as pd
+
+fake = [
+ "SHOCKING: Scientists confirm drinking hot water cures every disease overnight!!!",
+ "You won't believe what the government is secretly putting in your tap water",
+ "Doctors HATE this miracle fruit that melts belly fat in 3 days",
+ "BREAKING: Celebrity secretly replaced by a clone, insiders reveal the truth!!",
+ "Leaked memo PROVES the moon landing was filmed in a studio, share before it is banned",
+ "Banned video exposes the hoax behind electric cars, wake up people!!!",
+ "Miracle herb cures cancer in one week and big pharma is hiding it from you",
+ "Aliens landed in the capital last night and officials are covering it up",
+ "This one weird trick lets you earn 5 lakh a month from home, 100% proof inside",
+ "Shocking bombshell: mobile towers are secretly controlling your mind",
+ "EXPOSED: the secret cabal that really runs the world revealed at last!!",
+ "Drinking lemon juice with salt instantly destroys the virus, doctors stunned",
+ "Government to ban all cash tomorrow, forward this message to everyone now!!!",
+ "Man lives 200 years thanks to secret ancient remedy the media won't tell you about",
+ "Viral photo PROVES the election was stolen, mainstream media silent!!!",
+ "Scientists admit vaccines contain tracking chips, whistleblower leaks documents",
+ "WARNING: this common vegetable is poison and they don't want you to know",
+ "Free iPhone for everyone who shares this post in the next 24 hours!!!",
+ "Famous actor dead at 40? Shocking truth they are hiding from the public",
+ "Secret document reveals the sun will go dark for 15 days, stock up now!!!",
+ "Local mayor caught being a lizard person in leaked footage, share before deleted",
+ "Magic pill lets you lose 20 kilos without diet or exercise, doctors furious",
+ "Water on Mars was a hoax created by NASA to steal your tax money!!!",
+ "Hospital secretly harvesting organs from patients, anonymous insider claims",
+]
+real = [
+ "The central bank kept interest rates unchanged on Wednesday, citing easing inflation, according to a statement.",
+ "Officials said the new metro line will open to passengers next month after final safety checks.",
+ "A study published in a medical journal found that regular exercise lowers the risk of heart disease.",
+ "Parliament passed the budget bill on Tuesday after two days of debate, lawmakers said.",
+ "The ministry of education announced revised exam dates for secondary school students.",
+ "Heavy rain caused flooding in several districts, and rescue teams evacuated hundreds of residents, officials told reporters.",
+ "The company reported a quarterly profit of 2.4 billion rupees, up 8 percent from last year.",
+ "Police arrested two suspects in connection with the robbery, a spokesperson said on Monday.",
+ "Researchers at the university developed a low cost water filter, the team reported in a paper.",
+ "The national cricket team won the series 3-1 after a strong performance in the final match.",
+ "The health department said vaccination centres will stay open on weekends to meet demand.",
+ "Engineers completed repairs on the bridge and traffic resumed on Friday, the transport authority said.",
+ "The court adjourned the hearing until next week and asked the government to submit its reply.",
+ "Farmers in the region expect a good harvest this season due to timely monsoon rains, according to agriculture officials.",
+ "The finance minister met industry leaders to discuss export growth, the ministry said in a statement.",
+ "Scientists observed a rare comet this week, and astronomers said it would be visible again in 2060.",
+ "The city council approved funding for new public libraries and bicycle lanes on Thursday.",
+ "Airlines added extra flights ahead of the festival season, the aviation regulator reported.",
+ "A new report from the statistics office shows unemployment fell slightly in the last quarter.",
+ "The football club announced the signing of a midfielder on a three year contract.",
+ "Schools will reopen on Monday after the winter break, the education department confirmed.",
+ "Local volunteers planted five thousand trees along the river bank over the weekend, organisers said.",
+ "The prime minister is scheduled to visit the region next week, a government spokesperson told reporters.",
+ "Doctors at the hospital performed a successful kidney transplant, the hospital said in a release.",
+]
+df = pd.DataFrame({"title": fake + real, "text": [""] * (len(fake) + len(real)),
+                   "label": [1] * len(fake) + [0] * len(real)})
+df.to_csv("data/sample_news.csv", index=False)
+print(len(df), "rows written")

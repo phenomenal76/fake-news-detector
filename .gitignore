@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+.DS_Store
+# big files - never push these to GitHub
+data/Fake.csv
+data/True.csv
+data/*.zip
+models/*.joblib
+models/bert/
+models/*.pt
